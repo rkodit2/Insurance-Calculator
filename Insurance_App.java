@@ -56,7 +56,7 @@ public class Insurance_App {
 			showMenu();
 			choice = Integer.parseInt(sc.nextLine());
 			if (choice == 1) {
-				
+				MemberWriter.printMembersToScreent(membs);	
 			} else if (choice == 2) {
 				
 			} else if (choice == 3) {
