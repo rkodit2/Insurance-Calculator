@@ -52,11 +52,12 @@ public class Insurance_App {
 		String fname;
 		fname = sc.nextLine();
 		ArrayList<Member> membs = new ArrayList<Member>();
+		ArrayList<Member> fileMembs = MemberReader.readMembersFromFile(fname);
 		do {
 			showMenu();
 			choice = Integer.parseInt(sc.nextLine());
 			if (choice == 1) {
-				MemberWriter.printMembersToScreent(membs);	
+				MemberWriter.printMembersToScreen(membs);	
 			} else if (choice == 2) {
 				System.out.print("Enter first and last name: ");
 				String firstName = sc.next();
@@ -80,7 +81,20 @@ public class Insurance_App {
 				String alzheimers = sc.nextLine();
 				membs.add(new Member(lastName, firstName, age, height, weight, bpSys, bpDias, cancer, diabetes, alzheimers));
 			} else if (choice == 3) {
-				
+				System.out.print("(T)ext, (B)inary, (X)ML:  ");
+				String type = sc.nextLine();
+				System.out.print("Enter the name of the output file:  ");
+				String outFile = sc.nextLine();
+				if(type.equalsIgnoreCase("T")) {
+					MemberWriter.writeMembersToTextFile(outFile, fileMembs);
+				}
+				else if(type.equalsIgnoreCase("B")) {
+					MemberWriter.writeMembersToBinary(outFile, fileMembs);
+				}
+				else if(type.equalsIgnoreCase("X")) {
+					MemberWriter.writeMembersToXML(outFile, fileMembs);
+				}
+				System.out.println("\nMembers Written Successfully");
 			} else if (choice == 4) {
 				
 			} else if (choice == 5) {

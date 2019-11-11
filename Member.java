@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Member {
+public class Member implements Serializable {
     private String lastName;
     private String firstName;
     private int age; //2
