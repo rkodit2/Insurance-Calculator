@@ -42,7 +42,19 @@ public class Member implements Serializable {
     public String alzheimers() {
         return alzheimers;
     }
-
+    // for XML
+    public Member(){
+        lastName = "";
+        firstName = "";
+        age = 0;
+        height = 0;
+        weight = 0;
+        bpSyst = 0;
+        bpDias = 0;
+        cancer = "";
+        diabetes = "";
+        alzheimers = "";
+    }
     public Member(String lastName, String firstName, int age, int height,
                   int weight, int bpSyst, int bpDias, String cancer,
                   String diabetes, String alzheimers) {
