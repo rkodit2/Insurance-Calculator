@@ -1,8 +1,22 @@
 public class MemberWriter {
 
-    //function to save members to a tab-delimited file
+    //prints members to screen
+    public static void printMembersToScreen(ArrayList<Member> members){
+        for(Member m: members){
+            System.out.println(m);
+        }
+    }
 
 
-    //function to save to binary
-    //function save to xml
+    //function to write to binary
+
+
+    
+    //function to write to xml
+
+
+
+
+    //function to write to JSON
+
 }
