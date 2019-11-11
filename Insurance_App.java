@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Insurance_App {
@@ -50,6 +51,7 @@ public class Insurance_App {
 		System.out.println("Enter the name of member file: ");
 		String fname;
 		fname = sc.nextLine();
+		ArrayList<Member> membs = new ArrayList<Member>();
 		do {
 			showMenu();
 			choice = Integer.parseInt(sc.nextLine());
