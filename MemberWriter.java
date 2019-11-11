@@ -11,7 +11,7 @@ public class MemberWriter {
 
 
     //function to write members to a tab-delimited file
-    public static boolean writeMembersToTextFIle(String fname, ArrayList<Member> members){
+    public static boolean writeMembersToTextFile(String fname, ArrayList<Member> members){
         try{
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fname)));
             for(Member m: members){
