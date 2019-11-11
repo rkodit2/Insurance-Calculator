@@ -1,5 +1,7 @@
 import java.util.*;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 public class MemberReader {
     public static ArrayList<Member> readMembersFromFile(String fname){
@@ -24,5 +26,15 @@ public class MemberReader {
             ex.printStackTrace();
             return null;
         }
+    }
+    public static ArrayList<Member> readMembersFromBinary(String fname){
+    	try {
+    		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fname));
+    		ArrayList<Member> result = (ArrayList<Member>)ois.readObject();
+    		ois.close();
+    		return result;
+    	} catch (Exception ex) {
+    		return null;
+    	}
     }
 }

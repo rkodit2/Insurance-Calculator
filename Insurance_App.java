@@ -62,6 +62,7 @@ public class Insurance_App {
 		fname = sc.nextLine();
 		ArrayList<Member> membs = new ArrayList<Member>();
 		ArrayList<Member> fileMembs = MemberReader.readMembersFromFile(fname);
+		int count;
 		do {
 			showMenu();
 			choice = Integer.parseInt(sc.nextLine());
@@ -105,7 +106,29 @@ public class Insurance_App {
 				}
 				System.out.println("\nMembers Written Successfully");
 			} else if (choice == 4) {
+				count = 0;
+				System.out.print("(T)ext, (B)inary, (X)ML:  ");
+				String type = sc.nextLine();
+				System.out.print("Enter the name of the input file:  ");
+				String outFile = sc.nextLine();
+				if(type.equalsIgnoreCase("T")) {
+					ArrayList<Member> text = MemberReader.readMembersFromFile(fname);
+					for(int i = 0; i < text.size(); i++) {
+						count++;
+					}
+					System.out.println(count + " Members read");
+				}
+				else if(type.equalsIgnoreCase("B")) {
+					ArrayList<Member> binary = MemberReader.readMembersFromBinary(fname);
+				        for(Member m: binary){
+				            count++;
+				        }
+					System.out.println(count + " Members read");
+				}
 				
+				else if(type.equalsIgnoreCase("X")) {
+					
+				}
 			} else if (choice == 5) {
 			
 			} else if (choice == 6) {
