@@ -3,14 +3,14 @@ import java.io.Serializable;
 public class Member implements Serializable {
     private String lastName;
     private String firstName;
-    private int age; //2
-    private int height;//3
-    private int weight;//4
-    private int bpSyst;//5
-    private int bpDias;//6
-    private String cancer;//7
-    private String diabetes;//8
-    private String alzheimers;//9
+    private int age; 
+    private int height;
+    private int weight;
+    private int bpSyst;
+    private int bpDias;
+    private String cancer;
+    private String diabetes;
+    private String alzheimers;
 
     public String lastName() {
         return lastName;
