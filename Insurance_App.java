@@ -58,7 +58,27 @@ public class Insurance_App {
 			if (choice == 1) {
 				MemberWriter.printMembersToScreent(membs);	
 			} else if (choice == 2) {
-				
+				System.out.print("Enter first and last name: ");
+				String firstName = sc.next();
+				String lastName = sc.nextLine().trim();
+				System.out.print("Enter age: ");
+				int age = sc.nextInt();
+				System.out.print("Enter height in inches: ");
+				int height = sc.nextInt();
+				System.out.print("Enter weight in pounds: ");
+				int weight = sc.nextInt();
+				System.out.print("Enter blood pressure (sys and dias): ");
+				int bpSys = sc.nextInt();
+				int bpDias = sc.nextInt();
+				sc.nextLine();
+				System.out.println("Has a family member had... ");
+				System.out.print("Cancer?");
+				String cancer = sc.nextLine();
+				System.out.print("Diabetes?");
+				String diabetes = sc.nextLine();
+				System.out.print("Alzheimers?");
+				String alzheimers = sc.nextLine();
+				membs.add(new Member(lastName, firstName, age, height, weight, bpSys, bpDias, cancer, diabetes, alzheimers));
 			} else if (choice == 3) {
 				
 			} else if (choice == 4) {
