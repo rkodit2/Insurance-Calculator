@@ -1,3 +1,7 @@
+/** 
+ *This class is the driver class.
+ *@author Rajashree Kodithyala
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,7 +45,12 @@ public class Insurance_App {
 		System.out.println("INSURANCE SCORE CARD");
 		System.out.println("THANK YOU");
 	}
-
+/**
+ * Creates the array list with the members using the object class Member.
+ * For each choice, it asks for the required input.
+ * Terminates the program.
+ * @param args
+ */
 	public static void main(String[] args) {
 		printWelcome();
 		

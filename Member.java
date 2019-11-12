@@ -1,3 +1,10 @@
+/**
+ * This class creates the Member.
+ * It includes setters and getters for each part of the file.
+ * It creates the the instance and toString function that formats each Member.
+ * @author Rajashree
+ *
+ */
 import java.io.Serializable;
 
 public class Member implements Serializable {
