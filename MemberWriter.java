@@ -19,7 +19,8 @@ public class MemberWriter {
         try{
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fname)));
             for(Member m: members){
-                pw.println(m);
+            	//pw.println(m);
+                pw.println(m.toStringTabs());
             }
             pw.close();
             System.out.println("\nMembers Written Successfully");
