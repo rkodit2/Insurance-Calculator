@@ -1,4 +1,6 @@
 import java.util.*;
+import java.beans.XMLDecoder;
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -16,7 +18,8 @@ public class MemberReader {
                 parts = line.split("\t");
 
 
-                members.add(new Member(parts[0],parts[1],Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),Integer.parseInt(parts[4]),Integer.parseInt(parts[5]),Integer.parseInt(parts[6]),parts[7],parts[8],parts[9]));
+                members.add(new Member(parts[0],parts[1],Integer.parseInt(parts[2]),
+                		Integer.parseInt(parts[3]),Integer.parseInt(parts[4]),Integer.parseInt(parts[5]),Integer.parseInt(parts[6]),parts[7],parts[8],parts[9]));
             }
             sc.close();
             return members;
@@ -37,4 +40,14 @@ public class MemberReader {
     		return null;
     	}
     }
-}
+    public static ArrayList<Member> readMembersFromXML(String fname){
+    	try {
+    		XMLDecoder dec = new XMLDecoder(new BufferedInputStream(new FileInputStream(fname)));
+    		ArrayList<Member> result = (ArrayList<Member>)dec.readObject();
+    		dec.close();
+    		return result;
+    	} catch (Exception ex) {
+    		return null;
+    	}
+    	}
+    }
