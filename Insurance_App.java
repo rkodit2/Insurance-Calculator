@@ -60,14 +60,13 @@ public class Insurance_App {
 		System.out.println("Enter the name of member file: ");
 		String fname;
 		fname = sc.nextLine();
-		ArrayList<Member> membs = new ArrayList<Member>();
 		ArrayList<Member> fileMembs = MemberReader.readMembersFromFile(fname);
 		int count;
 		do {
 			showMenu();
 			choice = Integer.parseInt(sc.nextLine());
 			if (choice == 1) {
-				MemberWriter.printMembersToScreen(membs);	
+				MemberWriter.printMembersToScreen(fileMembs);	
 			} else if (choice == 2) {
 				System.out.print("Enter first and last name: ");
 				String firstName = sc.next();
@@ -89,7 +88,7 @@ public class Insurance_App {
 				String diabetes = sc.nextLine();
 				System.out.print("Alzheimers?");
 				String alzheimers = sc.nextLine();
-				membs.add(new Member(lastName, firstName, age, height, weight, bpSys, bpDias, cancer, diabetes, alzheimers));
+				fileMembs.add(new Member(lastName, firstName, age, height, weight, bpSys, bpDias, cancer, diabetes, alzheimers));
 			} else if (choice == 3) {
 				System.out.print("(T)ext, (B)inary, (X)ML:  ");
 				String type = sc.nextLine();
@@ -112,14 +111,14 @@ public class Insurance_App {
 				System.out.print("Enter the name of the input file:  ");
 				String outFile = sc.nextLine();
 				if(type.equalsIgnoreCase("T")) {
-					ArrayList<Member> text = MemberReader.readMembersFromFile(fname);
+					ArrayList<Member> text = MemberReader.readMembersFromFile(outFile);
 					for(int i = 0; i < text.size(); i++) {
 						count++;
 					}
 					System.out.println(count + " Members read");
 				}
 				else if(type.equalsIgnoreCase("B")) {
-					ArrayList<Member> binary = MemberReader.readMembersFromBinary(fname);
+					ArrayList<Member> binary = MemberReader.readMembersFromBinary(outFile);
 				        for(Member m: binary){
 				            count++;
 				        }
@@ -127,7 +126,13 @@ public class Insurance_App {
 				}
 				
 				else if(type.equalsIgnoreCase("X")) {
-					
+					ArrayList<Member> xml = MemberReader.readMembersFromXML(outFile);
+			        for(Member m: xml){
+			            count++;
+			        }
+				System.out.println(count + " Members read");
+			
+			
 				}
 			} else if (choice == 5) {
 			
