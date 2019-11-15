@@ -4,13 +4,13 @@ import java.io.BufferedWriter;
         import java.util.ArrayList;
 
 public class InsuranceScoreWriter {
-    public static boolean writeInsuranceScore(String fname, ArrayList<InsuranceScore> scores) {
+    public static boolean writeInsuranceScore(ArrayList<InsuranceScore> scores) {
         try{
-            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fname)));
+//            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fname)));
             for(InsuranceScore s: scores){
-                pw.println(s);
+               System.out.println(s);
             }
-            pw.close();
+//            pw.close();
             return true;
         }catch(Exception ex){
             return false;
