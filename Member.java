@@ -33,7 +33,7 @@ public class Member implements Serializable {
     public int getweight() {
         return weight;
     }
-    public int getbySyst() {
+    public int getbpSyst() {
         return bpSyst;
     }
     public int getbpDias() {
