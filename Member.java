@@ -18,10 +18,10 @@ public class Member implements Serializable {
     private String diabetes;
     private String alzheimers;
 
-    public String lastName() {
+    public String getLastName() {
         return lastName;
     }
-    public String firstName() {
+    public String getFirstName() {
         return firstName;
     }
     public int getage() {
@@ -76,7 +76,7 @@ public class Member implements Serializable {
         this.diabetes = diabetes;
         this.alzheimers = alzheimers;
     }
-
+    @Override
     public String toString() {
         String member = lastName + ", " + firstName + "\nAge	" + age +
                 "\nHeight	" + height + " in" + "\nWeight	" + weight + " lbs"
@@ -84,5 +84,10 @@ public class Member implements Serializable {
                 "\nCancer	" + cancer + "\nDiabetes	" + diabetes +
                 "\nAlzheimers	" + alzheimers + "\n----------------------- \n";
         return member;
+    }
+    public String toStringTabs() {
+    	String member = getLastName() + "\t" + getFirstName() + "\t" + getage() + "\t" + getheight() + "\t" + getweight() + "\t" + 
+    getbySyst() + "\t" + getbpDias() + "\t" + getcancer() + "\t" + getdiabetes() + "\t" + getalzheimers();
+    	return member;
     }
 }
