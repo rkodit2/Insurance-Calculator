@@ -40,13 +40,27 @@ public class Assessor {
 		return total;
 	}
 	
+	public String getRisk(int total) {
+		if (total <= 20 ) {
+			return "low risk";
+		} else if (total <= 50 ) {
+			return "moderate risk";
+		} else if (total <= 75) {
+			return "high risk";
+		} else {
+			return "uninsurable";
+		}
+	}
+	
 	public double calcBMI(int weight, int height) {
 		double BMI = (weight/height)*(weight/height);
 		return BMI;
 		
 	}
 	
-	public void memberScore(Member mem) {
+	public InsuranceScore memberScore(Member mem) {
+		String firstname = mem.getFirstName();
+		String lastname = mem.getLastName();
 		int age = mem.getage(); //single person
 		int height = mem.getheight();
 		int weight = mem.getweight();
@@ -55,8 +69,11 @@ public class Assessor {
 		String cancer = mem.getcancer();
 		String diabetes = mem.getdiabetes();
 		String alzheimers = mem.getalzheimers();
+		
 		double BMI = calcBMI(weight, height);
-		int score = getVerdict(age, BMI, bpSyst, bpDias, cancer, diabetes, alzheimers);
+		int points = getVerdict(age, BMI, bpSyst, bpDias, cancer, diabetes, alzheimers);
+		InsuranceScore score = new InsuranceScore(lastname, firstname, points, getRisk(points));
+		return score;
 		
 	}
 	public ArrayList<InsuranceScore> memberScore(ArrayList<Member> membs) {
@@ -69,4 +86,3 @@ public class Assessor {
 
 
 }
-
