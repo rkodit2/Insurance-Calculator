@@ -58,5 +58,28 @@ public class MemberWriter {
     	}
     }
     //function to write to JSON
+    public static boolean writeMembersToJSON(String fname, ArrayList<InsuranceScore> members) {
+        try{
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fname)));
+            JSONObject memObj;
+            JSONArray array = new JSONArray();
+            for(InsuranceScore s : members){
+                memObj = new JSONObject();
+                memObj.put("last name",s.getLastName());
+                memObj.put("first name",s.getFirstName());
+                memObj.put("score",s.getScore());
+                memObj.put("verdict",s.getVerdict());
+                array.add(memObj);
+            }
+            JSONObject outer = new JSONObject();
+            outer.put("members",array);
+            pw.println(outer.toJSONString());
+            pw.close();
+            return true;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
 }
