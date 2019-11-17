@@ -3,7 +3,7 @@
  *@author Rajashree Kodithyala
  */
 import java.util.ArrayList;
-import java.util.Scanner;
+        import java.util.Scanner;
 
 public class Insurance_App {
 
@@ -135,11 +135,18 @@ public class Insurance_App {
 
                 }
             } else if (choice == 5) {
-                ArrayList<InsuranceScore> test = Assessor.memberScore(fileMembs);
-              InsuranceScoreWriter.writeInsuranceScore(test);
+                ArrayList<InsuranceScore> memberResults = Assessor.memberScore(fileMembs);
+                InsuranceScoreWriter.writeInsuranceScore(memberResults);
 
             } else if (choice == 6) {
-
+                System.out.println("Enter name of JSON output file: ");
+                String fileName = sc.nextLine();
+                ArrayList<InsuranceScore> results = Assessor.memberScore(fileMembs);
+                if (MemberWriter.writeMembersToJSON(fileName,results)) {
+                    System.out.println("Scores were written successfully");
+                }else {
+                    System.out.println("Failed to write");
+                }
             }
 
         } while (choice != 7);
