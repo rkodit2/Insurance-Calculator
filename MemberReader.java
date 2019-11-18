@@ -1,3 +1,11 @@
+/**
+ * This class reads the file by tabs.
+ * It creates a new member.
+ * It reads the file as a text, binary, and XML.
+ * @author Rajashree Kodithyala, Michael Bernasol, Matt Espinos
+ */
+
+
 import java.util.*;
 import java.beans.XMLDecoder;
 import java.io.BufferedInputStream;

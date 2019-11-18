@@ -1,3 +1,10 @@
+/**
+ * This class writes the insurance
+ * risk information to the screen.
+ * Note: JSON writer is in the MemberWritter class.
+ * @author Rajashree Kodithyala, Michael Bernasol, Matt Espinos
+ */
+
 import java.io.BufferedWriter;
         import java.io.FileWriter;
         import java.io.PrintWriter;

@@ -2,7 +2,7 @@
  * This class creates the Member.
  * It includes setters and getters for each part of the file.
  * It creates the the instance and toString function that formats each Member.
- * @author Rajashree
+ * @author Rajashree Kodithyala, Michael Bernasol, Matt Espinos
  *
  */
 import java.io.Serializable;
@@ -87,7 +87,7 @@ public class Member implements Serializable {
     }
     public String toStringTabs() {
     	String member = getLastName() + "\t" + getFirstName() + "\t" + getage() + "\t" + getheight() + "\t" + getweight() + "\t" + 
-    getbySyst() + "\t" + getbpDias() + "\t" + getcancer() + "\t" + getdiabetes() + "\t" + getalzheimers();
+    getbpSyst() + "\t" + getbpDias() + "\t" + getcancer() + "\t" + getdiabetes() + "\t" + getalzheimers();
     	return member;
     }
 }

@@ -1,4 +1,15 @@
+/**
+ * This class calculates the risk score 
+ * for each member.
+ * It creates an InsuranceScore object
+ * for each member that expresses the 
+ * risk.
+ * @author Rajashree Kodithyala, Michael Bernasol, Matt Espinos
+ */
 
+import java.util.ArrayList;
+
+public class Assessor {
     public static int getPointsAge(int age) {
         int agePoints = 0;
         if (age < 30 ) {

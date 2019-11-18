@@ -1,3 +1,11 @@
+/**
+ * This class prints the members to the screen.
+ * It saves the member to a text file,
+ * a binary file, a XML file, a the JSON file.
+ * It loads the members into the different files.
+ * @author Rajashree Kodithyala, Michael Bernasol, Matt Espinos
+ */
+
 import java.util.ArrayList;
 import java.beans.XMLEncoder;
 import java.io.*;

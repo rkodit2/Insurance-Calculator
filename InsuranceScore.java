@@ -1,3 +1,10 @@
+/**
+ * This is the object class that stores
+ * the name, score, and the risk level for
+ * each member.
+ * @author Rajashree Kodithyala, Michael Bernasol, Matt Espinos
+ */
+
 public class InsuranceScore {
 	private String lastName;
 	private String firstName;

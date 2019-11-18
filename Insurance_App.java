@@ -1,6 +1,7 @@
 /**
  *This class is the driver class.
- *@author Rajashree Kodithyala
+ *It is in charge of printing out the menu and exiting the program.
+ *@author Rajashree Kodithyala, Michael Bernasol, Matt Espinos
  */
 import java.util.ArrayList;
         import java.util.Scanner;
