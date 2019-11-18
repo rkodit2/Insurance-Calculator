@@ -90,6 +90,7 @@ public class Insurance_App {
                 System.out.print("Alzheimers?");
                 String alzheimers = sc.nextLine();
                 fileMembs.add(new Member(lastName, firstName, age, height, weight, bpSys, bpDias, cancer, diabetes, alzheimers));
+                System.out.println("A new member has been added.");
             } else if (choice == 3) {
                 System.out.print("(T)ext, (B)inary, (X)ML:  ");
                 String type = sc.nextLine();
