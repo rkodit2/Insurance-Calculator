@@ -8,11 +8,11 @@
 
 import java.util.*;
 import java.beans.XMLDecoder;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-
+//import java.io.BufferedInputStream;
+//import java.io.File;
+//import java.io.FileInputStream;
+//import java.io.ObjectInputStream;
+import java.io.*;
 public class MemberReader {
     public static ArrayList<Member> readMembersFromFile(String fname){
         try{
@@ -27,7 +27,7 @@ public class MemberReader {
 
 
                 members.add(new Member(parts[0],parts[1],Integer.parseInt(parts[2]),
-                		Integer.parseInt(parts[3]),Integer.parseInt(parts[4]),Integer.parseInt(parts[5]),Integer.parseInt(parts[6]),parts[7],parts[8],parts[9]));
+                        Integer.parseInt(parts[3]),Integer.parseInt(parts[4]),Integer.parseInt(parts[5]),Integer.parseInt(parts[6]),parts[7],parts[8],parts[9]));
             }
             sc.close();
             return members;
@@ -39,23 +39,24 @@ public class MemberReader {
         }
     }
     public static ArrayList<Member> readMembersFromBinary(String fname){
-    	try {
-    		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fname));
-    		ArrayList<Member> result = (ArrayList<Member>)ois.readObject();
-    		ois.close();
-    		return result;
-    	} catch (Exception ex) {
-    		return null;
-    	}
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fname));
+            ArrayList<Member> result = (ArrayList<Member>)ois.readObject();
+            ois.close();
+            return result;
+        } catch (Exception ex) {
+            return null;
+        }
     }
     public static ArrayList<Member> readMembersFromXML(String fname){
-    	try {
-    		XMLDecoder dec = new XMLDecoder(new BufferedInputStream(new FileInputStream(fname)));
-    		ArrayList<Member> result = (ArrayList<Member>)dec.readObject();
-    		dec.close();
-    		return result;
-    	} catch (Exception ex) {
-    		return null;
-    	}
-    	}
+        try {
+            XMLDecoder dec = new XMLDecoder(new BufferedInputStream(new FileInputStream(fname)));
+            ArrayList<Member> result = (ArrayList<Member>)dec.readObject();
+            dec.close();
+            return result;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
+}
