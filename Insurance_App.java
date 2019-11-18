@@ -105,7 +105,7 @@ public class Insurance_App {
                 else if(type.equalsIgnoreCase("X")) {
                     MemberWriter.writeMembersToXML(outFile, fileMembs);
                 }
-                System.out.println("\nMembers Written Successfully");
+
             } else if (choice == 4) {
                 count = 0;
                 System.out.print("(T)ext, (B)inary, (X)ML:  ");
